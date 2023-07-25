@@ -1,100 +1,90 @@
 import React from 'react'
 import {
-    View,
+    SafeAreaView,
     Text,
-    Image,
+    ScrollView,
+    Linking,
     TouchableOpacity,
-    StyleSheet,
-    ImageBackground,
-    Alert
+    StyleSheet
 } from 'react-native'
 
-const createAlert = (press = '정의되지 않은') =>{
-    Alert.alert(
-        `${press}`,
-        `${press} 버튼입니다.`,
-        [
-            {
-                text:'CANCEL',
-                onPress:()=>console.log('취소버튼을 눌렀습니다.'),
-                style:'cancel'
-            },
-            {
-                text:'OK',
-                onPress:()=>console.log('확인버튼을 눌렀습니다.')
-            }
-
-        ]
-    )
+const DATA = {
+	"page": [
+		{
+			"name": "GOOGLE",
+			"url": "https://www.google.com/",
+			"mainColor": "red"
+		},
+		{
+			"name": "NAVER",
+			"url": "https://www.naver.com/",
+			"mainColor": "yellowgreen"
+		},
+		{
+			"name": "DAUM",
+			"url": "https://www.daum.net/",
+			"mainColor": "orange"
+		},
+		{
+			"name": "YAHOO",
+			"url": "https://www.yahoo.com/",
+			"mainColor": "mediumpurple"
+		},
+		{
+			"name": "BING",
+			"url": "https://www.bing.com/",
+			"mainColor": "green"
+		},
+		{
+			"name": "ZUM",
+			"url": "https://zum.com/",
+			"mainColor": "skyblue"
+		},
+		{
+			"name": "NATE",
+			"url": "https://www.nate.com/",
+			"mainColor": "red"
+		},
+	]
 }
 
 const App = () => {
     return(
-        <View style = {{flex:1}}>
-            <ImageBackground source={require('./img/kakaoProfileImg/backgroundimg.jpg')} style={{flex:1,backgroundColor:'grey'}} imageStyle={{opacity:0.5}}>
-                {/*상단*/}
-                <View style = {styles.topContainer}>
-                    {/*닫기 버튼*/}
-                    <TouchableOpacity onPress={()=>createAlert('닫기')}>
-                        <Image source={require('./img/kakaoProfileImg/close.png')} style={styles.icon}/>
-                    </TouchableOpacity>
-                    <View style = {{flexDirection:'row',}}>
-                        {/*선물하기 버튼*/}
-                        <TouchableOpacity style = {{marginHorizontal:5}} onPress={()=>createAlert('선물하기')}>
-                            <Image source={require('./img/kakaoProfileImg/gift.png')} style={styles.icon}/>
-                        </TouchableOpacity>
-                        {/*QR 버튼*/}
-                        <TouchableOpacity style = {{marginHorizontal:5}} onPress={()=>createAlert('QR')}>
-                            <Image source={require('./img/kakaoProfileImg/QR.png')} style={styles.icon}/>
-                        </TouchableOpacity>
-                        {/*설정 버튼*/}
-                        <TouchableOpacity style = {{marginHorizontal:5}} onPress={()=>createAlert('설정')}>
-                            <Image source={require('./img/kakaoProfileImg/setting.png')} style={styles.icon}/>    
-                        </TouchableOpacity>
-                    </View>
-                
-                </View>
-                {/*중간*/}
-                <View style = {{flex:11,alignItems:'center',justifyContent:'flex-end',paddingBottom:50}}>
-                    <TouchableOpacity onPress={()=>createAlert('프로필')}>
-                        <Image source={require('./img/kakaoProfileImg/profileimg.jpg')} style={{height:100, width:100,borderRadius:35}}/>
-                    </TouchableOpacity>
-                    <Text style ={{color:'white',fontWeight:'bold',fontSize:17,marginTop:8}}>김한재</Text>
-                </View>
-                {/*하단*/}
-                <View style = {{flex:3,flexDirection:'row',alignItems:'center',justifyContent:'space-evenly',borderTopWidth:0.6,borderTopColor:'lightgray'}}>
-                    <TouchableOpacity style = {{alignItems:'center'}} onPress={()=>createAlert('나와의 채팅')}>
-                        <Image source={require('./img/kakaoProfileImg/chat.png')} style={styles.icon}/>
-                        <Text style = {{color:'white',marginTop:8}}>나와의 채팅</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = {{alignItems:'center'}} onPress={()=>createAlert('프로필 편집')}>  
-                        <Image source={require('./img/kakaoProfileImg/edit.png')} style={styles.icon}/>
-                        <Text style = {{color:'white',marginTop:8}}>프로필 편집</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = {{alignItems:'center'}} onPress={()=>createAlert('카카오스토리')}>
-                        <Image source={require('./img/kakaoProfileImg/story.png')} style={styles.icon}/>
-                        <Text style = {{color:'white',marginTop:8}}>카카오스토리</Text>
-                    </TouchableOpacity>
-                </View>
-            </ImageBackground>
-        </View>
+        <SafeAreaView style = {{flex: 1,alignItems:'center',justifyContent:'center'}}>
+            <ScrollView>
+                <Text style ={{fontStyle:'italic',fontSize:30,color:'black',margin:30}}>검색 엔진 모음</Text>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[0].url)} style ={{backgroundColor:'red', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To GOOGLE</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[1].url)} style ={{backgroundColor:'lime', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To NAVER</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[2].url)} style ={{backgroundColor:'orange', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To DAUM</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[3].url)} style ={{backgroundColor:'purple', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To YAHOO</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[4].url)} style ={{backgroundColor:'green', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To BING</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[5].url)} style ={{backgroundColor:'skyblue', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To ZUM</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[6].url)} style ={{backgroundColor:'red', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                    <Text style = {{fontSize:15,color:'white',padding:30}}>Go To NATE</Text>
+                </TouchableOpacity>
+
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
-const styles = StyleSheet.create({
-    topContainer :{
-        flex:1.5,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-between',
-        paddingHorizontal:20
-    },
 
-    icon : {
-        height:20,
-        width:20
-    }
-    
-
-})
 export default App
