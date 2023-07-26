@@ -53,31 +53,31 @@ const App = () => {
         <SafeAreaView style = {{flex: 1,alignItems:'center',justifyContent:'center'}}>
             <ScrollView>
                 <Text style ={{fontStyle:'italic',fontSize:30,color:'black',margin:30}}>검색 엔진 모음</Text>
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[0].url)} style ={{backgroundColor:'red', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[0].url)} style ={{backgroundColor:DATA.page[0].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To GOOGLE</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[1].url)} style ={{backgroundColor:'lime', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[1].url)} style ={{backgroundColor:DATA.page[1].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To NAVER</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[2].url)} style ={{backgroundColor:'orange', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[2].url)} style ={{backgroundColor:DATA.page[2].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To DAUM</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[3].url)} style ={{backgroundColor:'purple', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[3].url)} style ={{backgroundColor:DATA.page[3].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To YAHOO</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[4].url)} style ={{backgroundColor:'green', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[4].url)} style ={{backgroundColor:DATA.page[4].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To BING</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[5].url)} style ={{backgroundColor:'skyblue', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[5].url)} style ={{backgroundColor:DATA.page[5].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To ZUM</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[6].url)} style ={{backgroundColor:'red', borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
+                <TouchableOpacity onPress={()=>Linking.openURL(DATA.page[6].url)} style ={{backgroundColor:DATA.page[6].mainColor, borderRadius:20,marginBottom:50,alignItems:'center',justifyContent:'center'}}>
                     <Text style = {{fontSize:15,color:'white',padding:30}}>Go To NATE</Text>
                 </TouchableOpacity>
 
