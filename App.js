@@ -235,7 +235,7 @@ const Item = ({title,description,date}) =>(
 const App = () => {
 	return(
 		<SafeAreaView style={{flex:1}}>
-            <View style = {{flex:0.09,justifyContent:'space-between',alignItems:'center',paddingHorizontal:10,flexDirection:'row'}}>
+            <View style = {{padding:15,justifyContent:'space-between',alignItems:'center',paddingHorizontal:10,flexDirection:'row'}}>
 
                 
                     <Text style={{fontSize:20,fontWeight:'bold',}}>채팅</Text>
@@ -254,19 +254,17 @@ const App = () => {
                         </TouchableOpacity>
                     </View>
             </View>
-			<ScrollView style={{flex:11}}>
-
-                <TouchableOpacity style={{backgroundColor:'lightgray',borderRadius:25,justifyContent:'center',alignItems:'center'}} onPress={()=>Linking.openURL('http://www.naver.com')}>
-                    <Text style={{fontSize:20,color:'gray',padding:25}}>광고 배너</Text>
-                </TouchableOpacity>
 
                 <FlatList
                     data={DATA}
-                    renderItem={({item}) => <Item title={item.title} description={item.description} date={item.date} />}
-                    keyExtractor={item => item.id.toString()}
-                />
+                    ListHeaderComponent={() => (
+                        <TouchableOpacity style={{backgroundColor:'lightgray',borderRadius:25,justifyContent:'center',alignItems:'center'}} onPress={()=>Linking.openURL('http://www.naver.com')}>
+                        <Text style={{fontSize:20,color:'gray',padding:25}}>광고 배너</Text>
+                        </TouchableOpacity>
 
-            </ScrollView>
+                    )}
+                    renderItem={({item}) => <Item title={item.title} description={item.description} date={item.date} />}
+                    keyExtractor={item => item.id.toString()} />
 		</SafeAreaView>
 	)
 }
