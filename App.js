@@ -6,27 +6,29 @@ import {
 
 const App = () => {
 	return (
-		<View style={{flex:4}}>
-			<View style={{flex:1,backgroundColor:'powderblue',alignItems:'center',justifyContent:'center'}}>
-                <Text>Powderblue</Text>
-            </View>
-
-            <View style={{flex:3,flexDirection:'row'}}>
-                <View style={{flex:1.5}}>
-                    <View style={{flex:1,backgroundColor:'yellow',alignItems:'center',justifyContent:'center'}}>  
-                        <Text>Yellow</Text>                      
+        <View style={{flex:1}}>
+            <View style={{flex:6,flexDirection:'row'}}>
+                <View style={{flex:2}}>
+                    <View style={{flex:2.5,flexDirection:'row'}}>
+                        <View style={{flex:2.5}}>
+                            <View style={{flex:2,backgroundColor:'white'}}></View>
+                            <View style={{flex:1.2,backgroundColor:'blue'}}></View>
+                        </View>
+                        <View style={{flex:2,backgroundColor:'black'}}></View>
                     </View>
-
-                    <View style={{flex:2,backgroundColor:'lavender',alignItems:'center',justifyContent:'center'}}>
-                        <Text>Lavender</Text>
-                    </View>
+                    <View style={{flex:2,backgroundColor:'white'}}></View>
                 </View>
-
-                <View style={{flex:1.5,backgroundColor:'pink',alignItems:'center',justifyContent:'center'}}>
-                    <Text>Pink</Text>
+                <View style={{flex:1}}>
+                    <View style={{flex:1,backgroundColor:'yellow'}}></View>
+                    <View style={{flex:2,backgroundColor:'blue'}}></View>
                 </View>
             </View>
-		</View>
+            <View style={{flex:1,backgroundColor:'red'}}></View>
+            <View style={{flex:1,flexDirection:'row'}}>
+                <View style={{flex:1,backgroundColor:'yellow'}}></View>
+                <View style={{flex:2,backgroundColor:'black'}}></View>
+            </View>
+        </View>
 	)
 }
 
